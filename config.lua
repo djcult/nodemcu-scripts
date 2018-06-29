@@ -7,8 +7,7 @@ local module = {}
 
 -- identify NodeMCU by chipid
 local nodenames = {}
-nodenames[10702156] = "balcony"
-nodenames[944910] = "nodedev"
+nodenames[11642057] = "terrace"
 module.SELF = nodenames[node.chipid()]
 if module.SELF == nil then
   module.SELF = node.chipid()
@@ -17,15 +16,13 @@ end
 
 -- configure wifi
 module.WIFI = {}
-module.WIFI.ssid = "W00t"
-module.WIFI.pwd = G.secrets.WIFIPASS
+module.WIFI.ssid = "khw.devices"
+module.WIFI.pwd = "neepmaka"
 
 -- configure MQTT
 module.MQTT = {}
-module.MQTT.host = "192.168.1.8"
+module.MQTT.host = "egghead.khw.local"
 module.MQTT.port = 1883
-module.MQTT.user = "home-assistant"
-module.MQTT.pass = G.secrets.MQTTPASS
 module.MQTT.endpoint = "/home-assistant/" .. module.SELF .. "/"
 
 return module

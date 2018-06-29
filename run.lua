@@ -4,10 +4,9 @@
 --
 
 G = {}
-G.secrets = require("secrets")
 G.config = require("config")
 G.wifi = require("wifisetup")
 G.mqtt = require("mqttclient")
-G.app = require("app_" .. G.config.SELF)
+G.app = require("app")
 
 G.app.start()
